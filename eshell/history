@@ -1,0 +1,66 @@
+ls
+julia
+ls
+cd Dropbox/workspace/
+sos
+ls
+ls
+git status
+git commit -a
+git commit -a -m lagrangian correction
+git add -m lagrangian correction
+git commit -m lagrangian correction
+git status
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+python script.py
+ls
+cd data/database/
+ls
+cd ..
+cd ..
+ls
+python scriptFuncValue.py 
+python scriptFuncValue.py 
+python scriptFuncValue.py 
+python scriptFuncValue.py 
+python scriptNumOfErrors.py
+python scriptNumOfErrors.py
+ls
+ls
+python script.py
+python script.py
+python script.py
+ls
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
+python scriptRank.py
