@@ -45,7 +45,6 @@
 	 py-autopep8
 	 python-environment
  	 python-mode
-	 undo-tree
 	))
 
 ;; activate all the packages
@@ -60,5 +59,3 @@
    (unless (package-installed-p package)
      (package-install package)))
 
-;; active undo-tree
-(global-undo-tree-mode)

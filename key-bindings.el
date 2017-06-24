@@ -29,6 +29,12 @@
 ;; Prevent auto-resize
 (setq even-window-heights nil)
 
+;; Flyspell auto correct
+(eval-after-load "flyspell" '(progn
+   (define-key flyspell-mouse-map (kbd "<C-down-mouse-3>") #'flyspell-correct-word)
+   (define-key flyspell-mouse-map (kbd "<C-mouse-3>") 'undefined) ))
+
+
 ;; Window resize
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
@@ -45,11 +51,17 @@
 (defalias 'redo 'undo-tree-redo)
 (global-set-key (kbd "C-z") 'undo) ;【Ctrl+z】
 (global-set-key (kbd "C-S-z") 'redo) ;【Ctrl+Shift+z】;  Mac style
-(global-set-key (kbd "M-n") 'next-line)
-(global-set-key (kbd "M-p") 'previous-line)
+
 
 ;; No more typing the whole yes or no. Just y or n will do.
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; OB-Ipython Kill Kernel
+;; ob-ipython Kill Kernel
 (global-set-key (kbd "C-M-q") 'ob-ipython-kill-kernel)
+
+;; Delete selection mode
+(delete-selection-mode 1)
+
+;; Clipboard kill ring 
+(setq save-interprogram-paste-before-kill t)
+;;(setq x-select-enable-clipboard nil)
