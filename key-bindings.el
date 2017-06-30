@@ -47,6 +47,14 @@
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
 
+;; Disable wheel right and left
+(global-set-key [wheel-left] 'ignore)
+(global-set-key [wheel-right] 'ignore)
+(global-set-key [double-wheel-left] 'ignore)
+(global-set-key [double-wheel-right] 'ignore)
+(global-set-key [triple-wheel-left] 'ignore)
+(global-set-key [triple-wheel-right] 'ignore)
+
 ;; Undo Redo
 (defalias 'redo 'undo-tree-redo)
 (global-set-key (kbd "C-z") 'undo) ;【Ctrl+z】

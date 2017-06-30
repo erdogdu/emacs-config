@@ -5,6 +5,8 @@
 (setq company-dabbrev-downcase nil)
 
 ;; Jedi requires virtualenv
+;; pip install jedi and epc
+;; pip install --upgrade /bla/.emacs.d/elpa/jedi-core-XXX/
 (defun my/python-mode-hook ()
   (add-to-list 'company-backends 'company-jedi))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
