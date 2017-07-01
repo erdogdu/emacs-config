@@ -73,3 +73,7 @@
 ;; Clipboard kill ring 
 (setq save-interprogram-paste-before-kill t)
 ;;(setq x-select-enable-clipboard nil)
+
+;; Smartparens move forward and backwards
+(global-set-key (kbd "C-M-]") 'sp-forward-sexp)
+(global-set-key (kbd "C-M-[") 'sp-backward-sexp)

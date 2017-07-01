@@ -13,11 +13,11 @@
   (add-to-list 'exec-path my-path))
 
 ;; Melpa and Elpa
-(require 'package) 
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives
-	     '("gnu" . "http://elpa.gnu.org/packages/"))
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
+  (add-to-list 'package-archives '("melpa" . url) t))
 (add-to-list 'package-archives
 	     '("org" . "http://orgmode.org/elpa/") t)
 
@@ -45,7 +45,8 @@
 	 py-autopep8
 	 python-environment
  	 python-mode
-	))
+	 ;;smartparens ;; auto-downloads dont work, manually downloaded
+	 ))
 
 ;; activate all the packages
 (package-initialize)
@@ -58,4 +59,3 @@
  (dolist (package package-list)
    (unless (package-installed-p package)
      (package-install package)))
-

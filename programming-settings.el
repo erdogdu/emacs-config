@@ -17,6 +17,9 @@
 (require 'ob-python)
 (require 'ob-ipython)
 (require 'py-autopep8)
+;;(require 'smartparens-config)
+;;(add-hook 'python-mode-hook #'smartparens-mode)
+
 (elpy-enable)
 
 ;; requires flake8, tornado and jedi, pep8
@@ -75,7 +78,10 @@
 (define-skeleton org-skeleton
   "#+TITLE: DEMO SCRIPT\n"
   "#+AUTHOR: Murat A. Erdogdu\n"
-  "#+email: erdogdu@stanford.edu\n"
+  "#+email: erdogdu@\n"
   "-----"
   )
 (global-set-key [C-S-f3] 'org-skeleton)
+
+(add-to-list 'org-structure-template-alist
+             '("s" "#+BEGIN_SRC ipython :session a :results value\n\n#+END_SRC"))

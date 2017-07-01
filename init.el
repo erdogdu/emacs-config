@@ -1,8 +1,8 @@
 ;; Murat A. Erdogdu
-
-(package-initialize)
+;; emacs configuration
 
 ;; Init packages
+(package-initialize)
 (load "~/.emacs.d/package-settings")
 
 ;; Visual settings
