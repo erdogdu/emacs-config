@@ -24,6 +24,5 @@
 (server-start)
 (custom-set-variables
  '(package-selected-packages (quote (auctex))))
-(custom-set-faces
- )
+(custom-set-faces)
 

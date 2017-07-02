@@ -13,7 +13,7 @@
   (add-to-list 'exec-path my-path))
 
 ;; Melpa and Elpa
-(require 'package)
+;; (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
