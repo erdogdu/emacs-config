@@ -1,4 +1,4 @@
-(define-package "ob-ipython" "20160918.1001" "org-babel functions for IPython evaluation"
+(define-package "ob-ipython" "20170628.1116" "org-babel functions for IPython evaluation"
   '((s "1.9.0")
     (dash "2.10.0")
     (dash-functional "1.2.0")

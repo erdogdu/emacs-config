@@ -53,7 +53,11 @@ def msg_router(name, ch):
 clients = {}
 
 def create_client(name):
-    cf = find_connection_file('emacs-' + name)
+    if name.endswith('.json'):
+        # Received an existing kernel we should connect to.
+        cf = find_connection_file(name)
+    else:
+        cf = find_connection_file('emacs-' + name)
     c = client.BlockingKernelClient(connection_file=cf)
     c.load_connection_file()
     c.start_channels()
@@ -117,17 +121,20 @@ class DebugHandler(tornado.web.RequestHandler):
 
 def make_app():
     return tornado.web.Application([
-        tornado.web.url(r"/execute/(\w+)", ExecuteHandler),
-        tornado.web.url(r"/inspect/(\w+)", InspectHandler),
+        tornado.web.url(r"/execute/([\w\-\.]+)", ExecuteHandler),
+        tornado.web.url(r"/inspect/([\w\-\.]+)", InspectHandler),
         tornado.web.url(r"/debug", DebugHandler),
-        ])
+    ])
 
 def main(args):
     parser = argparse.ArgumentParser()
     parser.add_argument('--port', type=int)
     parser.add_argument('--kernel')
     parser.add_argument('--conn-file')
+
+    parser.add_argument('positional', nargs='*')
     args = parser.parse_args()
+    extra_arguments = args.positional
     if args.conn_file:
         if runtime_dir:
             conn_file = (args.conn_file if os.path.isabs(args.conn_file)
@@ -153,7 +160,7 @@ def main(args):
             # Emacs sends SIGHUP upon exit
             signal.signal(signal.SIGHUP, onsignal)
 
-        manager.start_kernel()
+        manager.start_kernel(extra_arguments=extra_arguments)
         try:
             semaphore.acquire()
         except KeyboardInterrupt: pass

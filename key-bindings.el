@@ -75,5 +75,6 @@
 ;;(setq x-select-enable-clipboard nil)
 
 ;; Smartparens move forward and backwards
+(require 'smartparens-config)
 (global-set-key (kbd "C-M-]") 'sp-forward-sexp)
 (global-set-key (kbd "C-M-[") 'sp-backward-sexp)

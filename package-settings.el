@@ -45,7 +45,7 @@
 	 py-autopep8
 	 python-environment
  	 python-mode
-	 ;;smartparens ;; auto-downloads dont work, manually downloaded
+	 smartparens
 	 ))
 
 ;; activate all the packages

@@ -84,4 +84,4 @@
 (global-set-key [C-S-f3] 'org-skeleton)
 
 (add-to-list 'org-structure-template-alist
-             '("s" "#+BEGIN_SRC ipython :session a :results value\n\n#+END_SRC"))
+             '("s" "#+BEGIN_SRC ipython :session a :results value :async t\n\n#+END_SRC"))
