@@ -85,3 +85,5 @@
 
 (add-to-list 'org-structure-template-alist
              '("s" "#+BEGIN_SRC ipython :session a :results value :async t\n\n#+END_SRC"))
+(add-to-list 'org-structure-template-alist
+             '("plot" "#+BEGIN_SRC ipython :session a :file ./temp.png :exports both\n\n#+END_SRC"))

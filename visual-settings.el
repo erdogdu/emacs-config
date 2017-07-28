@@ -27,8 +27,20 @@
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
-;; line numbers
+;; line numbers and arrows
 (global-linum-mode t)
+(setq-default visual-line-fringe-indicators nil)
+(setq-default fringe-indicator-alist '(
+				       (truncation left-arrow right-arrow)
+				       (continuation nil) ;; left-curly-arrow
+				       (overlay-arrow . right-triangle)
+				       (up . up-arrow)
+				       (down . down-arrow)
+				       (top top-left-angle top-right-angle)
+				       (bottom bottom-left-angle bottom-right-angle top-right-angle top-left-angle)
+				       (top-bottom left-bracket right-bracket top-right-angle top-left-angle)
+				       (empty-line . empty-line)
+				       (unknown . question-mark)))
 
 ;; match parantheses
 (show-paren-mode 1)
@@ -65,3 +77,4 @@
 (custom-set-variables
  '(package-selected-packages (quote (auctex))))
 (custom-set-faces)
+
