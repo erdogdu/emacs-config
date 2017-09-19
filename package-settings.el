@@ -2,7 +2,7 @@
 (let ((my-path (expand-file-name "/Library/TeX/texbin/")))
   (setenv "PATH" (concat my-path ":" (getenv "PATH")))
   (add-to-list 'exec-path my-path))
-(let ((my-path (expand-file-name "/Users/muerdogd/anaconda/bin/")))
+(let ((my-path (expand-file-name "/Users/erdogdu/anaconda2/bin/")))
   (setenv "PATH" (concat my-path ":" (getenv "PATH")))
   (add-to-list 'exec-path my-path))
 (let ((my-path (expand-file-name "/usr/local/bin/")))
@@ -36,7 +36,7 @@
 	 ein
 	 elpy
 	 ess
-	 flycheck
+         flycheck
 	 matlab-mode
 	 ob-ipython
 	 org

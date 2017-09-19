@@ -7,6 +7,7 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+;; brew install ispell
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -36,3 +37,4 @@
 	  (lambda () (local-set-key (kbd "<S-s-mouse-1>") #'TeX-view))
 	  )
 (setq TeX-PDF-mode t)
+
