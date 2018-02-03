@@ -78,3 +78,10 @@
 (require 'smartparens-config)
 (global-set-key (kbd "C-M-]") 'sp-forward-sexp)
 (global-set-key (kbd "C-M-[") 'sp-backward-sexp)
+
+;; Revert buffer w/o confirm
+(defun revert-buffer-no-confirm ()
+  "Revert buffer without confirmation."
+  (interactive)
+  (revert-buffer :ignore-auto :noconfirm))
+(global-set-key (kbd "C-x M-r") 'revert-buffer-no-confirm)
