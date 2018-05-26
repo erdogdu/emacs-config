@@ -28,7 +28,7 @@
  '(
    (ipython . t)
    (python . t)
-   (julia . t)
+   ;; (julia . t)
    (R . t)
    ))
 ;; There is a problem with the R path:
@@ -38,9 +38,8 @@
 ;; Spelling
 (setq ispell-program-name "/usr/local/Cellar/ispell/3.4.00/bin/ispell")
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
-(autoload 'flyspell-delay-command "flyspell" "Delay on command." t) 
-(autoload 'tex-mode-flyspell-verify "flyspell" "" t) 
-
+(autoload 'flyspell-delay-command "flyspell" "Delay on command." t)
+(autoload 'tex-mode-flyspell-verify "flyspell" "" t)
 
 
 (setq org-src-preserve-indentation t)
@@ -48,7 +47,9 @@
 (setq org-support-shift-select t)
 (setq org-src-tab-acts-natively t)
 (setq org-src-preserve-indentation t
-      org-edit-src-content-indentation 0)
+    org-edit-src-content-indentation 0)
+(setq org-src-fontify-natively t)
+
 
 ;; This fixes ob-ipython warning bugs
 (setq python-shell-prompt-detect-failure-warning nil)
@@ -74,6 +75,7 @@
 (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
 (add-hook 'css-mode-hook #'aggressive-indent-mode)
 
+
 ;; org skeleton
 (define-skeleton org-skeleton
   "#+TITLE: DEMO SCRIPT\n"
@@ -87,3 +89,6 @@
              '("s" "#+BEGIN_SRC ipython :session a :results value :async t\n\n#+END_SRC"))
 (add-to-list 'org-structure-template-alist
              '("plot" "#+BEGIN_SRC ipython :session a :file ./temp.png :exports both\n\n#+END_SRC"))
+
+
+

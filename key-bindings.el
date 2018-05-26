@@ -70,7 +70,7 @@
 ;; Delete selection mode
 (delete-selection-mode 1)
 
-;; Clipboard kill ring 
+;; Clipboard kill ring
 (setq save-interprogram-paste-before-kill t)
 ;;(setq x-select-enable-clipboard nil)
 
@@ -85,3 +85,7 @@
   (interactive)
   (revert-buffer :ignore-auto :noconfirm))
 (global-set-key (kbd "C-x M-r") 'revert-buffer-no-confirm)
+
+;; make searches case sensitive
+(setq case-fold-search nil)
+

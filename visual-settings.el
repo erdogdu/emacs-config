@@ -42,6 +42,8 @@
 				       (empty-line . empty-line)
 				       (unknown . question-mark)))
 
+
+
 ;; match parantheses
 (show-paren-mode 1)
 
@@ -58,10 +60,6 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-;;(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
-;;  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
-;;  (flet ((process-list ())) ad-do-it))
-
 ;; Window resizing code chunk
 (defadvice pop-to-buffer (before cancel-other-window first)
   (ad-set-arg 1 nil))
@@ -72,9 +70,9 @@
 
 ;; zenburn settings
 (load-theme 'hc-zenburn t)
-(set-face-attribute 'region nil :background "#666" :foreground "#EF2020")  
+(set-face-attribute 'region nil :background "#666" :foreground "#EF2020")
 
-(custom-set-variables
- '(package-selected-packages (quote (auctex))))
-(custom-set-faces)
+;;(custom-set-variables
+;; '(package-selected-packages (quote (auctex))))
+;;(custom-set-faces)
 

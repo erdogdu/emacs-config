@@ -19,10 +19,12 @@
 ;; Turn off company in latex mode
 (add-hook 'LaTeX-mode-hook 'company-latex-hook)
 (defun company-latex-hook ()
-  (company-mode -1))
+  (company-mode 1)) ;; -1 to turn off
 
 ;; Eshell auto-complete
 (add-hook
  'eshell-mode-hook
  (lambda ()
    (setq pcomplete-cycle-completions nil)))
+
+
