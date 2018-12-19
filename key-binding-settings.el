@@ -64,9 +64,6 @@
 ;; No more typing the whole yes or no. Just y or n will do.
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; ob-ipython Kill Kernel
-(global-set-key (kbd "C-M-q") 'ob-ipython-kill-kernel)
-
 ;; Delete selection mode
 (delete-selection-mode 1)
 
@@ -75,9 +72,10 @@
 ;;(setq x-select-enable-clipboard nil)
 
 ;; Smartparens move forward and backwards
-(require 'smartparens-config)
-(global-set-key (kbd "C-M-]") 'sp-forward-sexp)
-(global-set-key (kbd "C-M-[") 'sp-backward-sexp)
+;;(require 'smartparens-config)
+;;(require 'smartparens-config)
+;;(global-set-key (kbd "C-M-]") 'sp-forward-sexp)
+;;(global-set-key (kbd "C-M-[") 'sp-backward-sexp)
 
 ;; Revert buffer w/o confirm
 (defun revert-buffer-no-confirm ()

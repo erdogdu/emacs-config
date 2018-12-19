@@ -1,5 +1,5 @@
 ;; Kill startup screen
-(setq inhibit-startup-screen t)
+;; (setq inhibit-startup-screen t)
 
 ;; Makes *scratch* empty.
 (setq initial-scratch-message "")
@@ -20,6 +20,8 @@
 ;; Screen size
 (add-to-list 'default-frame-alist '(height . 55))
 (add-to-list 'default-frame-alist '(width . 100))
+(setq split-height-threshold 1200)
+(setq split-width-threshold 2000)
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -41,8 +43,7 @@
 				       (top-bottom left-bracket right-bracket top-right-angle top-left-angle)
 				       (empty-line . empty-line)
 				       (unknown . question-mark)))
-
-
+(setq linum-format "%d ")
 
 ;; match parantheses
 (show-paren-mode 1)
@@ -60,19 +61,15 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-;; Window resizing code chunk
-(defadvice pop-to-buffer (before cancel-other-window first)
-  (ad-set-arg 1 nil))
-(ad-activate 'pop-to-buffer)
+;; Save ~backups to a specific location
+(setq backup-directory-alist `(("." . "~/.backups")))
 
 ;; Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 ;; zenburn settings
 (load-theme 'hc-zenburn t)
-(set-face-attribute 'region nil :background "#666" :foreground "#EF2020")
-
-;;(custom-set-variables
-;; '(package-selected-packages (quote (auctex))))
-;;(custom-set-faces)
-
+;; (load-theme 'spacemacs-dark t)
+;; (load "~/.emacs.d/themes/doom-initialize")
+;; (set-face-attribute 'region nil :background "#666" :foreground "#EF2020")
+(set-face-attribute 'region nil :foreground "#EF2020")
