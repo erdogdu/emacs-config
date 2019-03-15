@@ -49,9 +49,25 @@
   "#+email: erdogdu@toronto.edu\n"
   "-----"
   )
-(global-set-key [C-S-f3] 'org-skeleton)
+
+(random t)
+(defun org-insert-source-block ()
+  (interactive)
+  (insert
+   (format "#+name: l%s-%d
+#+begin_src ein :session 8888/temp.ipynb
+
+#+end_src" (line-number-at-pos) (random 100)
+)
+   )
+  (forward-line -1)
+  (goto-char (line-end-position))
+)
+(add-hook 'org-mode-hook
+    (lambda ()
+    (local-set-key "\C-\M-s" 'org-insert-source-block)))
 
 (add-to-list 'org-structure-template-alist
-             '("s" "#+begin_src ein :session 8888/temp.ipynb :results drawer\n\n#+end_src"))
+             '("s" "#+begin_src ein :session 8888/temp.ipynb\n\n#+end_src"))
 (add-to-list 'org-structure-template-alist
-             '("p" "#+begin_src ein :session 8888/temp.ipynb  :image output.png :results drawer\n\n#+end_src"))
+             '("p" "#+begin_src ein :session 8888/temp.ipynb :image output.png :results drawer\n\n#+end_src"))
